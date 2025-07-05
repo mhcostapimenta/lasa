@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>ALARMES</title>
+    <link rel="icon" type="image/png" sizes="16x17" href="assets/img/favicon16x16.png">
+    <link rel="icon" type="image/png" sizes="32x33" href="assets/img/favicon32x32.png" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,700&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/animation.css">
+    <link rel="stylesheet" href="assets/css/colors.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="d-flex justify-content-between align-items-center" id="top-bar"><a class="top-bar-logo" href="#"><img src="assets/img/logo-alarmes-white.svg"></a>
+        <h1>WegGIS</h1><button class="btn btn-menu" id="btn-navbar-menu" type="button"><i class="fa fa-navicon"></i></button>
+    </nav>
+    <footer class="d-flex flex-row justify-content-center align-items-center" id="bottom-bar">
+        <!-- Start: bottom-bar-menu -->
+        <ul class="bottom-bar-menu">
+            <li><a id="btn-camadas-auxiliares" href="#" data-bs-toggle="tooltip" data-bs-title="Camadas Auxiliares"><i class="fa fa-plus"></i></a><a id="btn-tipos-mapas" href="#" data-bs-toggle="tooltip" data-bs-title="Tipos de Mapa"><i class="fa fa-map"></i></a><a id="btn-envio-email" href="#" data-bs-toggle="tooltip" data-bs-title="Envio de e-mail"><i class="fa fa-bell"></i></a><a href="#" data-bs-toggle="tooltip" data-bs-title="Ajuda"><i class="fa fa-commenting"></i></a><a href="#" data-bs-toggle="tooltip" data-bs-title="Institucional"><i class="fa fa-shield"></i></a></li>
+        </ul><!-- End: bottom-bar-menu -->
+    </footer>
+    <main id="content"></main>
+    <aside id="main-menu" class="main-menu"><button class="btn btn-main-menu" id="btn-main-menu" type="button"><i class="fa fa-close"></i></button>
+        <ul id="nav-main-menu" class="nav-main-menu">
+            <li><a href="index.html">Login</a></li>
+            <li><a href="#">WebGIS</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Perigo de fogo - Sazonal</a></li>
+            <li><a href="#">Perigo de fogo - 7 dias</a></li>
+            <li><a href="#">Perigo de fogo - Panorama atual</a></li>
+            <li><a href="#">Panorama fogos naturais</a></li>
+            <li><a href="#">Probabilidade de excedência</a></li>
+            <li><a href="#">Fogoteca</a></li>
+            <li><a href="#">Infográficos</a></li>
+            <li><a href="#">SIFAU</a></li>
+        </ul>
+    </aside>
+    <aside id="modal-control-pannel" class="modal-control-pannel active">
+        <!-- Start: btn-control-pannel --><button class="btn btn-control-pannel" id="btn-control-pannel" type="button"></button><!-- End: btn-control-pannel -->
+        <!-- Start: control-pannel -->
+        <div class="control-pannel">
+            <div id="controllers" class="controllers">
+                <!-- Start: btn-controllers --><button class="btn btn-controllers" type="button">ÁREAS QUEIMADAS</button><!-- End: btn-controllers -->
+                <!-- Start: pannels -->
+                <form class="pannels">
+                    <div class="btn-group gap-1" role="group" id="btn-alerta-historico"><button class="btn" id="btn-alterta-rapido" type="button">ALERTA RÁPIDO</button><button class="btn" id="btn-historico" type="button">HISTÓRICO</button></div>
+                    <div class="dropdown d-flex justify-content-around"><button class="btn dropdown-toggle d-flex flex-row flex-fill justify-content-between align-items-center" aria-expanded="false" data-bs-toggle="dropdown" type="button">Período&nbsp;</button>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="#">1 dia</a><a class="dropdown-item" href="#">7 dias</a><a class="dropdown-item" href="#">15 dias</a><a class="dropdown-item" href="#">30 dias</a><a class="dropdown-item" href="#">60 dias</a></div>
+                    </div>
+                    <div class="d-flex flex-column gap-3">
+                        <h2>Legenda</h2><!-- Start: card-square -->
+                        <div class="card-square days">
+                            <!-- Start: legend-square -->
+                            <div class="legend-square">
+                                <!-- Start: square -->
+                                <div class="square"><span>01</span><span>dia</span></div><!-- End: square -->
+                                <!-- Start: square -->
+                                <div class="square"><span>07</span><span>dias</span></div><!-- End: square -->
+                                <!-- Start: square -->
+                                <div class="square"><span>15</span><span>dias</span></div><!-- End: square -->
+                                <!-- Start: square -->
+                                <div class="square"><span>30</span><span>dias</span></div><!-- End: square -->
+                                <!-- Start: square -->
+                                <div class="square"><span>60</span><span>dias</span></div><!-- End: square -->
+                            </div><!-- End: legend-square -->
+                        </div><!-- End: card-square -->
+                    </div><input class="form-control auto-complete-input" type="text" id="auto-complete-input-categoria" placeholder="Categoria">
+                    <div id="auto-complete-list-categoria" class="autocomplete-items"></div><input class="form-control auto-complete-input" type="text" id="auto-complete-input-area" placeholder="Área">
+                    <div id="auto-complete-list-area" class="autocomplete-items"></div>
+                    <h2>Insira as coordenadas</h2><!-- Start: horizontal-division -->
+                    <div class="horizontal-division"><input class="form-control" type="text"><input class="form-control" type="text"></div><!-- End: horizontal-division --><button class="btn btn-primary" type="submit">Buscar</button>
+                </form><!-- End: pannels -->
+                <!-- Start: btn-controllers --><button class="btn btn-controllers" type="button">PERIGO DE FOGO</button><!-- End: btn-controllers -->
+                <!-- Start: pannels -->
+                <form class="pannels"><input class="form-control" type="date"><!-- Start: card-square -->
+                    <div class="card-square">
+                        <!-- Start: legend-square -->
+                        <div class="legend-square vert">
+                            <!-- Start: square -->
+                            <div class="square"><span>Baixo</span></div><!-- End: square -->
+                            <!-- Start: square -->
+                            <div class="square"><span>Moderado</span></div><!-- End: square -->
+                            <!-- Start: square -->
+                            <div class="square"><span>Alto</span></div><!-- End: square -->
+                            <!-- Start: square -->
+                            <div class="square"><span>Muito alto</span></div><!-- End: square -->
+                            <!-- Start: square -->
+                            <div class="square"><span>Extremo</span></div><!-- End: square -->
+                        </div><!-- End: legend-square -->
+                    </div><!-- End: card-square -->
+                </form><!-- End: pannels -->
+                <!-- Start: btn-controllers --><button class="btn btn-controllers" type="button">ÁREA DO USUÁRIO</button><!-- End: btn-controllers -->
+                <!-- Start: pannels -->
+                <form class="pannels"><input class="form-control" type="file" multiple=""><button class="btn btn-primary" type="submit">Enviar</button></form><!-- End: pannels -->
+            </div>
+        </div><!-- End: control-pannel -->
+    </aside>
+    <div class="modal fade modal-template" role="dialog" tabindex="-1" id="modal-camadas-auxiliares">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Camadas Auxiliares</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Fogoteca</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Fogo Ativo (Dia atual)</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2"><label class="form-check-label" for="formCheck-3">Hidrografia</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3"><label class="form-check-label" for="formCheck-3">Rodovias Federais</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-4"><label class="form-check-label" for="formCheck-4">Rodovias Estaduais</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-5"><label class="form-check-label" for="formCheck-5">Biomas</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-6"><label class="form-check-label" for="formCheck-7">Estados</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-7"><label class="form-check-label" for="formCheck-7">Municípios</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-8"><label class="form-check-label" for="formCheck-8">ROI</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-9"><label class="form-check-label" for="formCheck-9">Unidades de Conservação</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-10"><label class="form-check-label" for="formCheck-10">Terras Indígenas</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-11"><label class="form-check-label" for="formCheck-11">Aeródromo</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-12"><label class="form-check-label" for="formCheck-13">Aldeias Indígenas</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-13"><label class="form-check-label" for="formCheck-13">Brigadas de Incêndio</label></div>
+                    </form>
+                </div>
+                <div class="modal-footer"><button class="btn btn-light btn-fechar" type="button" data-bs-dismiss="modal">Fechar</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade modal-template" role="dialog" tabindex="-1" id="modal-tipos-mapas">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Tipos de Mapas</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-14"><label class="form-check-label" for="formCheck-14">Open Street Map</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-15"><label class="form-check-label" for="formCheck-15">Open Topo Map</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-16"><label class="form-check-label" for="formCheck-16">Satélite</label></div>
+                    </form>
+                </div>
+                <div class="modal-footer"><button class="btn btn-light btn-fechar" type="button" data-bs-dismiss="modal">Fechar</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade modal-template" role="dialog" tabindex="-1" id="modal-envio-email">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Envio de e-mail</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="d-flex flex-column justify-content-center align-content-center gap-3"><input class="form-control" type="text" placeholder="Biomas"><input class="form-control" type="text" placeholder="Categorias"><textarea class="form-control" placeholder="Áreas"></textarea>
+                        <div class="btn-group gap-1" role="group" id="envio-email-"><button class="btn btn-primary" type="button"><i class="fa fa-plus" style="font-size: 16px;"></i></button><button class="btn btn-primary" type="button"><i class="fa fa-plus-circle"></i></button><button class="btn btn-primary" type="button"><i class="fa fa-minus"></i></button><button class="btn btn-primary" type="button"><i class="fa fa-minus-circle"></i></button></div><textarea class="form-control" placeholder="Áreas Selecionadas"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer"><button class="btn btn-light btn-fechar" type="button" data-bs-dismiss="modal">Fechar</button><button class="btn btn-light btn-salvar" id="btn-salvar-envio-email" type="button">Salvar</button></div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
