@@ -67,70 +67,85 @@ document.getElementById('btn-envio-email').addEventListener('click', function(ev
 });   
 }
 
+// Controla Modal Camadas SIFAU
+if (document.getElementById('btn-camadas-sifau')) {
+ document.getElementById('btn-camadas-sifau').addEventListener('click', function(event) {
+  event.preventDefault(); // impede o comportamento padrão do link
+  var modalCamadasSifau = new bootstrap.Modal(document.getElementById('modal-camadas-sifau'));
+  modalCamadasSifau.show();
+});   
+}
 
-// ###### Autocommplete #############
+// Controla Modal Regioes
+if (document.getElementById('btn-regioes')) {
+ document.getElementById('btn-regioes').addEventListener('click', function(event) {
+  event.preventDefault(); // impede o comportamento padrão do link
+  var modalRegioes = new bootstrap.Modal(document.getElementById('modal-regioes'));
+  modalRegioes.show();
+});   
+}
 
-// Função construtora de campos autocomplete
-const addAutoComplete = (input, data, result) => {
-  input.addEventListener("input", () => {
-    const value = input.value.trim().toLowerCase(); // Trim evita espaços acidentais
-    result.innerHTML = ""; // Limpa os resultados anteriores
+// Controla Modal Sobre Sifau
+if (document.getElementById('btn-sobre')) {
+ document.getElementById('btn-sobre').addEventListener('click', function(event) {
+  event.preventDefault(); // impede o comportamento padrão do link
+  var modalSobreSifau = new bootstrap.Modal(document.getElementById('modal-sobre-sifau'));
+  modalSobreSifau.show();
+});   
+}
 
-    if (!value) return;
+// Controla a listagem de áreas
+const btnAreas = document.querySelectorAll('#btn-areas li');
 
-    const filtered = data.filter(element =>
-      element.toLowerCase().startsWith(value)
-    );
-
-    // Evita adicionar itens duplicados
-    const uniqueFiltered = [...new Set(filtered)];
-
-    uniqueFiltered.forEach(element => {
-      const item = document.createElement("div");
-      item.classList.add("autocomplete-item");
-      item.textContent = element;
-      item.onclick = () => {
-        input.value = element;
-        result.innerHTML = "";
-      };
-      result.appendChild(item);
-    });
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!input.contains(e.target) && !result.contains(e.target)) {
-      result.innerHTML = "";
-    }
-  });
-};
-
-// Seleciona elementos do Automplete - campo Categoria
-const inputCategoria = document.getElementById("auto-complete-input-categoria");
-const categorias = ["Brasil", "Argentina", "Alemanha", "Chile", "Colômbia", "Peru", "Paraguai", "Uruguai", "Venezuela"];
-const listCategoria = document.getElementById("auto-complete-list-categoria");
-
-// Controla o Autocomplete do campo Categoria
-addAutoComplete(inputCategoria, categorias, listCategoria); 
-
-// Seleciona elementos do Automplete - campo Área
-const inputArea = document.getElementById("auto-complete-input-area");
-const areas = ["Brasil", "Argentina", "Alemanha", "Chile", "Colômbia", "Peru", "Paraguai", "Uruguai", "Venezuela"];
-const listAreas = document.getElementById("auto-complete-list-area");
-
-// Controla o Autocomplete do campo Área
-addAutoComplete(inputArea, areas, listAreas);
-
-const btnAlertaHistorico = document.querySelectorAll("#btn-alerta-historico button");
-
-function cleanBtnAlerta() {
-    btnAlertaHistorico.forEach((btn) =>{
-        btn.classList.remove('active');
+if (btnAreas) {
+    const cleanBtnAreas = () => {
+        btnAreas.forEach((btnArea) => {
+            btnArea.classList.remove('active');
+        });
+    };    
+    btnAreas.forEach((btnArea) =>{
+        btnArea.addEventListener('click', function(event){
+            event.preventDefault();
+            if (btnArea.classList.contains('active')) {
+              this.classList.remove('active');  
+            } else {
+             cleanBtnAreas();
+            this.classList.add('active');               
+            }
+        })
     })
 }
 
-btnAlertaHistorico.forEach((btn) =>{
-    btn.addEventListener('click', function(){
-        cleanBtnAlerta();
-        this.classList.toggle('active');
-    })
-})
+// Painel Draggable
+const dragDiv = document.getElementById("dragDiv");
+
+  let isDragging = false;
+  let offsetX, offsetY;
+
+  dragDiv.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    offsetX = e.clientX - dragDiv.offsetLeft;
+    offsetY = e.clientY - dragDiv.offsetTop;
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+      dragDiv.style.left = (e.clientX - offsetX) + "px";
+      dragDiv.style.top = (e.clientY - offsetY) + "px";
+    }
+  });
+
+  document.addEventListener("mouseup", () => {
+    isDragging = false;
+  });
+
+////// Controla o painel suspenso Legenda das Camadas - SIFAU
+
+const btnDragShow = document.getElementById('btn-drag-show');
+const dragContent = document.getElementById('drag-content');
+
+if (btnDragShow) {
+    btnDragShow.addEventListener('click', function(){
+        dragContent.classList.toggle('active');
+    }) 
+}
