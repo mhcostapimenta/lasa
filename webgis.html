@@ -54,6 +54,22 @@
                     <div class="dropdown d-flex justify-content-around"><button class="btn dropdown-toggle d-flex flex-row flex-fill justify-content-between align-items-center" aria-expanded="false" data-bs-toggle="dropdown" type="button">Período&nbsp;</button>
                         <div class="dropdown-menu"><a class="dropdown-item" href="#">1 dia</a><a class="dropdown-item" href="#">7 dias</a><a class="dropdown-item" href="#">15 dias</a><a class="dropdown-item" href="#">30 dias</a><a class="dropdown-item" href="#">60 dias</a></div>
                     </div>
+                    <h2>Datas</h2><!-- Start: horizontal-division -->
+                    <div class="horizontal-division"><input class="form-control" type="date"><input class="form-control" type="date"><input class="form-control auto-complete-input" type="text" id="auto-complete-input-categoria" placeholder="Categoria"></div><!-- End: horizontal-division -->
+                    <div><input class="form-control form-control" type="text" id="autocompleteInput" list="autocompleteOptions" placeholder="Selecione a categoria (País, UF, BI) ..."><datalist id="autocompleteOptions">
+      <option value="Option 1">
+      </option><option value="Brasil">
+      </option><option value="Canadá">
+      </option><option value="Caribe">
+      </option><option value="Portugal">
+    </option></datalist></div>
+                    <div><input class="form-control form-control" type="text" id="autocompleteInput-1" list="autocompleteOptions" placeholder="Selecione a região ..."><datalist id="autocompleteOptions">
+      <option value="Option 1">
+      </option><option value="Brasil">
+      </option><option value="Canadá">
+      </option><option value="Caribe">
+      </option><option value="Portugal">
+    </option></datalist></div>
                     <div class="d-flex flex-column gap-3">
                         <h2>Legenda</h2><!-- Start: card-square -->
                         <div class="card-square days">
@@ -71,11 +87,8 @@
                                 <div class="square"><span>60</span><span>dias</span></div><!-- End: square -->
                             </div><!-- End: legend-square -->
                         </div><!-- End: card-square -->
-                    </div><input class="form-control auto-complete-input" type="text" id="auto-complete-input-categoria" placeholder="Categoria">
-                    <div id="auto-complete-list-categoria" class="autocomplete-items"></div><input class="form-control auto-complete-input" type="text" id="auto-complete-input-area" placeholder="Área">
-                    <div id="auto-complete-list-area" class="autocomplete-items"></div>
-                    <h2>Insira as coordenadas</h2><!-- Start: horizontal-division -->
-                    <div class="horizontal-division"><input class="form-control" type="text"><input class="form-control" type="text"></div><!-- End: horizontal-division --><button class="btn btn-primary" type="submit">Buscar</button>
+                    </div>
+                    <div id="auto-complete-list-area" class="autocomplete-items"></div><button class="btn btn-primary" type="submit">Buscar</button>
                 </form><!-- End: pannels -->
                 <!-- Start: btn-controllers --><button class="btn btn-controllers" type="button">PERIGO DE FOGO</button><!-- End: btn-controllers -->
                 <!-- Start: pannels -->
