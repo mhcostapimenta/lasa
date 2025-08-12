@@ -321,6 +321,13 @@ body {
   gap: 24px;
 }
 
+.login-form input[type="text"], .login-form input[type="email"], .login-form input[type="password"] {
+  font-size: .8rem;
+  color: var(--controller-dropdown-text);
+  border: none;
+  box-shadow: none;
+}
+
 /* Table */
 
 .tab-content-dash.tabela {

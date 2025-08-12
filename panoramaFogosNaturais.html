@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>ALARMES</title>
+    <link rel="icon" type="image/png" sizes="16x17" href="assets/img/favicon16x16.png">
+    <link rel="icon" type="image/png" sizes="32x33" href="assets/img/favicon32x32.png" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,700&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/animation.css">
+    <link rel="stylesheet" href="assets/css/colors.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="d-flex justify-content-between align-items-center" id="top-bar"><a class="top-bar-logo" href="#"><img src="assets/img/logo-alarmes-white.svg"></a>
+        <h1>Panorama Fogos Naturais</h1><button class="btn btn-menu" id="btn-navbar-menu" type="button"><i class="fa fa-navicon"></i></button>
+    </nav>
+    <footer class="d-flex flex-row justify-content-center align-items-center" id="bottom-bar">
+        <!-- Start: bottom-bar-menu -->
+        <ul class="bottom-bar-menu"></ul><!-- End: bottom-bar-menu -->
+    </footer>
+    <main id="content" class="internal"></main>
+    <aside id="main-menu" class="main-menu"><button class="btn btn-main-menu" id="btn-main-menu" type="button"><i class="fa fa-close"></i></button>
+        <ul id="nav-main-menu" class="nav-main-menu">
+            <li><a href="index.html">Login</a></li>
+            <li><a href="#">WebGIS</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Perigo de fogo - Sazonal</a></li>
+            <li><a href="#">Perigo de fogo - 7 dias</a></li>
+            <li><a href="#">Perigo de fogo - Panorama atual</a></li>
+            <li><a href="#">Panorama fogos naturais</a></li>
+            <li><a href="#">Probabilidade de excedência</a></li>
+            <li><a href="#">Fogoteca</a></li>
+            <li><a href="#">Infográficos</a></li>
+            <li><a href="#">SIFAU</a></li>
+        </ul>
+    </aside>
+    <aside id="modal-control-pannel" class="modal-control-pannel active">
+        <!-- Start: btn-control-pannel --><button class="btn btn-control-pannel" id="btn-control-pannel" type="button"></button><!-- End: btn-control-pannel -->
+        <!-- Start: control-pannel -->
+        <div class="control-pannel">
+            <div id="controllers" class="controllers">
+                <!-- Start: btn-controllers --><button class="btn btn-controllers" type="button">Panorama Fogos naturais</button><!-- End: btn-controllers -->
+                <!-- Start: pannels -->
+                <form class="pannels active">
+                    <div><input class="form-control form-control" type="text" id="autocompleteInput" list="autocompleteOptions" placeholder="Selecione a categoria  ..."><datalist id="autocompleteOptions">
+      <option value="Option 1">
+      </option><option value="Brasil">
+      </option><option value="Canadá">
+      </option><option value="Caribe">
+      </option><option value="Portugal">
+    </option></datalist></div>
+                    <div><input class="form-control form-control" type="text" id="autocompleteInput-1" list="autocompleteOptions" placeholder="Selecione a região ..."><datalist id="autocompleteOptions">
+      <option value="Option 1">
+      </option><option value="Brasil">
+      </option><option value="Canadá">
+      </option><option value="Caribe">
+      </option><option value="Portugal">
+    </option></datalist></div><!-- Start: horizontal-division -->
+                    <div class="horizontal-division">
+                        <div><input class="form-control form-control" type="text" id="autocompleteInput-2" list="autocompleteOptions" placeholder="Ano ..."><datalist id="autocompleteOptions">
+      <option value="Option 1">
+      </option><option value="Brasil">
+      </option><option value="Canadá">
+      </option><option value="Caribe">
+      </option><option value="Portugal">
+    </option></datalist></div>
+                        <div><input class="form-control form-control" type="text" id="autocompleteInput-3" list="autocompleteOptions" placeholder="Período ..."><datalist id="autocompleteOptions">
+      <option value="Option 1">
+      </option><option value="Brasil">
+      </option><option value="Canadá">
+      </option><option value="Caribe">
+      </option><option value="Portugal">
+    </option></datalist></div>
+                    </div><!-- End: horizontal-division --><button class="btn btn-primary" type="submit">Buscar</button>
+                </form><!-- End: pannels -->
+            </div>
+        </div><!-- End: control-pannel -->
+    </aside>
+    <div class="modal fade modal-template" role="dialog" tabindex="-1" id="modal-camadas-auxiliares">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Camadas Auxiliares</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Fogoteca</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Fogo Ativo (Dia atual)</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2"><label class="form-check-label" for="formCheck-3">Hidrografia</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3"><label class="form-check-label" for="formCheck-3">Rodovias Federais</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-4"><label class="form-check-label" for="formCheck-4">Rodovias Estaduais</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-5"><label class="form-check-label" for="formCheck-5">Biomas</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-6"><label class="form-check-label" for="formCheck-7">Estados</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-7"><label class="form-check-label" for="formCheck-7">Municípios</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-8"><label class="form-check-label" for="formCheck-8">ROI</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-9"><label class="form-check-label" for="formCheck-9">Unidades de Conservação</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-10"><label class="form-check-label" for="formCheck-10">Terras Indígenas</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-11"><label class="form-check-label" for="formCheck-11">Aeródromo</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-12"><label class="form-check-label" for="formCheck-13">Aldeias Indígenas</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-13"><label class="form-check-label" for="formCheck-13">Brigadas de Incêndio</label></div>
+                    </form>
+                </div>
+                <div class="modal-footer"><button class="btn btn-light btn-fechar" type="button" data-bs-dismiss="modal">Fechar</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade modal-template" role="dialog" tabindex="-1" id="modal-tipos-mapas">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Tipos de Mapas</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-14"><label class="form-check-label" for="formCheck-14">Open Street Map</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-15"><label class="form-check-label" for="formCheck-15">Open Topo Map</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-16"><label class="form-check-label" for="formCheck-16">Satélite</label></div>
+                    </form>
+                </div>
+                <div class="modal-footer"><button class="btn btn-light btn-fechar" type="button" data-bs-dismiss="modal">Fechar</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade modal-template" role="dialog" tabindex="-1" id="modal-envio-email">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Envio de e-mail</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="d-flex flex-column justify-content-center align-content-center gap-3"><input class="form-control" type="text" placeholder="Biomas"><input class="form-control" type="text" placeholder="Categorias"><textarea class="form-control" placeholder="Áreas"></textarea>
+                        <div class="btn-group gap-1" role="group" id="envio-email-"><button class="btn btn-primary" type="button"><i class="fa fa-plus" style="font-size: 16px;"></i></button><button class="btn btn-primary" type="button"><i class="fa fa-plus-circle"></i></button><button class="btn btn-primary" type="button"><i class="fa fa-minus"></i></button><button class="btn btn-primary" type="button"><i class="fa fa-minus-circle"></i></button></div><textarea class="form-control" placeholder="Áreas Selecionadas"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer"><button class="btn btn-light btn-fechar" type="button" data-bs-dismiss="modal">Fechar</button><button class="btn btn-light btn-salvar" id="btn-salvar-envio-email" type="button">Salvar</button></div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
