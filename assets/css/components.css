@@ -349,7 +349,7 @@
   box-shadow: none;
 }
 
-.login-form button[type="submit"] {
+.login-form button[type="submit"], .login-form .btn {
   width: 100%;
   font-size: .85rem;
   color: var(--controller-submit-text);
@@ -361,7 +361,8 @@
   margin-bottom: 24px;
 }
 
-.login-form button[type="submit"]:hover {
+.login-form button[type="submit"]:hover, .login-form .btn:hover {
+  color: #fff;
   background-color: var(--controller-submit-hover);
 }
 
@@ -787,5 +788,151 @@
 
 .draggable .drag-content .accordion-body img {
   width: 100%;
+}
+
+/* Aplication Topics */
+
+.aplication-topics {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  border-bottom: 1px solid #fff;
+  padding: 16px 12px;
+}
+
+.aplication-topics:first-child {
+  border-top: 1px solid #fff;
+}
+
+.aplication-topics img {
+  width: 50px;
+  height: auto;
+}
+
+.aplication-topics ul {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Menu Envio */
+
+.menu-envio {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-envio li a {
+  font-size: .9rem;
+  font-weight: 600;
+  list-style: none;
+  color: #1B6ADE;
+  padding: 12px 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+
+.menu-envio li a:hover, .menu-envio li a.active {
+  color: #fff;
+}
+
+.menu-envio li {
+  border-right: 2px solid #1B6ADE;
+}
+
+.menu-envio li:last-child {
+  border-right: none;
+}
+
+/* Form Envio */
+
+.form-envio {
+}
+
+.form-envio input, .form-envio .form-select, .form-envio textarea {
+  font-size: .85rem !important;
+  color: var(--controller-dropdown-text);
+}
+
+.form-envio .text-termos {
+  font-size: .8rem;
+  color: var(--top-bar-btn);
+  font-style: italic;
+}
+
+.form-envio label {
+  font-size: .8rem;
+  color: #fff;
+}
+
+.form-envio .btn {
+  font-size: .85rem;
+  color: var(--controller-submit-text);
+  background-color: var(--controller-submit);
+  border-radius: 18px;
+  border: none;
+  box-shadow: none;
+  transition: all .3s ease-in-out;
+  margin-bottom: 24px;
+}
+
+.form-envio .btn:hover {
+  color: #fff;
+  background-color: var(--controller-submit-hover);
+}
+
+.form-envio .btn.disabled {
+  background-color: var(--controller-dropdown-text);
+}
+
+.form-envio #file-field {
+  opacity: 1;
+}
+
+.form-envio #file-field.disabled {
+  opacity: 0.5;
+}
+
+/* Card Fogoteca Success */
+
+.card-fogoteca-success {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  min-height: 300px;
+  background-color: #0E2A98;
+  border-radius: 20px;
+  padding: 32px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-fogoteca-success p {
+  font-size: 1.2rem !important;
+  line-height: 1.7rem !important;
+  color: #fff;
+  text-align: center;
+}
+
+.btn-fogoteca-success {
+  font-size: .85rem;
+  padding: 8px 32px;
+  color: var(--controller-submit-text);
+  background-color: var(--controller-submit);
+  border-radius: 18px;
+  border: none;
+  box-shadow: none;
+  transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.btn-fogoteca-success:hover {
+  color: #fff;
+  background-color: var(--controller-submit-hover);
 }
 

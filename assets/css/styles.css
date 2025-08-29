@@ -139,6 +139,96 @@ body {
   background-image: none;
 }
 
+#content.internal.fogoteca {
+  display: flex;
+  background: url("../../assets/img/background-fogoteca.webp");
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  #content.internal.fogoteca {
+    display: flex;
+    background: url("../../assets/img/background-fogoteca.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+#content.internal.fogoteca .container {
+  max-width: 1024px;
+}
+
+#content.internal.fogoteca.sobre {
+  display: block;
+  background: url("../../assets/img/background_fogoteca_azul.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#content.internal.fogoteca.sobre p, #content.internal.fogoteca.sobre .lista-sobre {
+  font-size: .9rem;
+  color: #fff;
+  line-height: 1.5rem;
+}
+
+#content.internal.fogoteca.sobre .lista-sobre {
+  line-height: 2.3rem;
+}
+
+#content.internal.fogoteca.sobre p a, #content.internal.fogoteca.sobre .lista-sobre li a, #content.internal.fogoteca.sobre .lista-sobre strong {
+  color: var(--top-bar-btn);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+
+#content.internal.fogoteca.sobrep a:hover {
+  color: var(--top-bar-btn-hover);
+}
+
+/* Presentation */
+
+#presentation {
+  width: 100%;
+  height: auto;
+  min-height: calc(100dvh - 72px);
+  background: #FDD687;
+  background: radial-gradient(circle,rgba(253, 214, 135, 1) 0%, rgba(254, 220, 145, 1) 32%, rgba(243, 145, 0, 1) 69%, rgba(234, 81, 14, 1) 100%);
+  padding: 48px 32px 72px;
+}
+
+#presentation h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+  #presentation h3 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: center;
+    max-width: 60%;
+    margin: 0 auto;
+  }
+}
+
+#presentation h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--top-bar-btn-hover);
+}
+
 /* Main Menu */
 
 .main-menu {
@@ -328,6 +418,82 @@ body {
   box-shadow: none;
 }
 
+.login-form h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--top-bar-title);
+}
+
+.login-form h4 {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--top-bar-title);
+  margin: 0;
+}
+
+.two-buttons {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  justify-content: center;
+}
+
+.login-form p {
+  font-size: .8rem;
+  width: 100%;
+  color: #ffffff;
+  text-align: left;
+  margin: 0;
+}
+
+.login-form ul {
+  font-size: .8rem;
+  width: 100%;
+  color: #ffffff;
+  text-align: left;
+}
+
+#content.internal.fogoteca .login-form {
+  border-radius: 20px;
+  background-color: rgba(0,0,0,0.5);
+  padding: 48px 24px;
+  gap: 16px;
+}
+
+#content.internal.fogoteca .login-form .btn {
+  margin: 0;
+}
+
+#content.internal.fogoteca .login-form .link-senha {
+  font-size: .8rem;
+  color: #ED7402;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+
+#content.internal.fogoteca .login-form .link-senha:hover {
+  color: #f8bc47;
+}
+
+#content.internal.fogoteca .login-form .link-conta {
+  font-size: .8rem;
+  color: #ffffff;
+}
+
+#content.internal.fogoteca .login-form .link-conta a {
+  margin-left: 6px;
+  color: #0DBDFD;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+
+#content.internal.fogoteca .login-form .link-conta a:hover {
+  color: #bbf7ff;
+}
+
 /* Table */
 
 .tab-content-dash.tabela {
@@ -388,5 +554,8 @@ body {
   font-size: .8rem;
   color: var(--controller-title);
   background-color: var(--control-pannel);
+}
+
+#content {
 }
 

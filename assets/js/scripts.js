@@ -7,38 +7,44 @@ const btnNavbarMenu = document.querySelector('#btn-navbar-menu');
 const mainMenu = document.querySelector('#main-menu');
 const btnMainMenu = document.querySelector('#btn-main-menu');
 
-btnNavbarMenu.addEventListener('click',()=>{
-    mainMenu.classList.toggle('active');
-});
+if (btnNavbarMenu) {  
+    btnNavbarMenu.addEventListener('click',()=>{
+        mainMenu.classList.toggle('active');
+    });
 
-btnMainMenu.addEventListener('click',()=>{
-    mainMenu.classList.toggle('active');
-});
+    btnMainMenu.addEventListener('click',()=>{
+        mainMenu.classList.toggle('active');
+    });  
+}
 
 // Controla o Control-pannel
 const btnCrtlPannel = document.querySelector('#btn-control-pannel');
 const modalCrtlPannel = document.querySelector('#modal-control-pannel');
 
-btnCrtlPannel.addEventListener('click',()=>{
-    modalCrtlPannel.classList.toggle('active');
-});
+if (btnCrtlPannel) {
+    btnCrtlPannel.addEventListener('click',()=>{
+        modalCrtlPannel.classList.toggle('active');
+    });    
+}
 
 // Controla os Controllers do Control-pannel
 const btnControllers = document.querySelectorAll('.btn-controllers');
 const pannels = document.querySelectorAll('.pannels');
 
-const cleanPannels = () => {
-    pannels.forEach((pannel) => {
-        pannel.classList.remove('active');
-    });
-};
+if (btnControllers) {
+    const cleanPannels = () => {
+        pannels.forEach((pannel) => {
+            pannel.classList.remove('active');
+        });
+    };
 
-btnControllers.forEach((btnController) =>{
-    btnController.addEventListener('click', function(){
-        cleanPannels();
-        this.nextElementSibling.classList.toggle('active');
+    btnControllers.forEach((btnController) =>{
+        btnController.addEventListener('click', function(){
+            cleanPannels();
+            this.nextElementSibling.classList.toggle('active');
+        })
     })
-})
+}
 
 // Controla Modal Camadas Auxiliares
 if (document.getElementById('btn-camadas-auxiliares')) {
@@ -119,7 +125,8 @@ if (btnAreas) {
 // Painel Draggable
 const dragDiv = document.getElementById("dragDiv");
 
-  let isDragging = false;
+if (dragDiv) {
+   let isDragging = false;
   let offsetX, offsetY;
 
   dragDiv.addEventListener("mousedown", (e) => {
@@ -137,10 +144,10 @@ const dragDiv = document.getElementById("dragDiv");
 
   document.addEventListener("mouseup", () => {
     isDragging = false;
-  });
+  });   
+}
 
 ////// Controla o painel suspenso Legenda das Camadas - SIFAU
-
 const btnDragShow = document.getElementById('btn-drag-show');
 const dragContent = document.getElementById('drag-content');
 
@@ -148,4 +155,25 @@ if (btnDragShow) {
     btnDragShow.addEventListener('click', function(){
         dragContent.classList.toggle('active');
     }) 
+}
+
+// Controla o formulário de envio - Fogoteca
+const acceptTerms = document.getElementById('accept-terms');
+const fileField = document.getElementById('file-field');
+const btnFogotecaSend = document.getElementById('btn-fogoteca-send');
+
+if (acceptTerms) {
+    acceptTerms.addEventListener("change", function() {
+      if (acceptTerms.checked) {
+        fileField.disabled = false;
+        btnFogotecaSend.disabled = false;
+        fileField.classList.remove('disabled');
+        btnFogotecaSend.classList.remove('disabled');
+      } else {
+        fileField.disabled = true;
+        btnFogotecaSend.disabled = true;
+        fileField.classList.add('disabled');
+        btnFogotecaSend.classList.add('disabled');
+      }
+    });
 }
